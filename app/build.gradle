@@ -1,0 +1,248 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    flavorDimensions "default"
+    defaultConfig {
+        applicationId "com.hms.pms"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        hstecESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hstecESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://175.126.166.232:8080"'             /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://175.126.166.232:8080"'             /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0010"'                                         /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 1
+            versionName '2.0.0'
+        }
+
+        hstecMonitorESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hstecMonitorESS'
+            buildConfigField 'String', 'URL_ADDR',  '"http://175.126.166.232:8080"'                 /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://175.126.166.232:8080"'                  /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"hstec"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 1
+            versionName '1.0.1'
+        }
+
+        hymsESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hymsESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://1.234.83.90:8080"'             /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://1.234.83.90:8080"'              /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"1"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.0'
+        }
+
+        seochangESS {
+            minSdkVersion 14
+            applicationId 'com.hms.seochangESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/seochang/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0001"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        solarlightESS {
+            minSdkVersion 14
+            applicationId 'com.hms.solarlightESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/solarlight/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                            /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0002"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        luxcoESS {
+            minSdkVersion 14
+            applicationId 'com.hms.luxcoESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://175.126.82.52:8080/app/luxco/login.aspx"'               /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://175.126.82.52:8080"'                                        /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0003"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.3'
+        }
+
+        bhESS {
+            minSdkVersion 14
+            applicationId 'com.hms.bhESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/bh/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                 /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0004"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        hyosungESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hyosungESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/hyosung/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                        /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0005"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        hmsESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hmsESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/pages/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0000"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        taewoongESS {
+            minSdkVersion 14
+            applicationId 'com.hms.taewoongESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://175.126.82.52:8080/app/taewoong/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://175.126.82.52:8080"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0007"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        fineemtechESS {
+            minSdkVersion 14
+            applicationId 'com.hms.fineemtechESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/fineemtech/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0008"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        hdesESS {
+            minSdkVersion 14
+            applicationId 'com.hms.hdesESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://175.126.82.52:8080/app/hdes/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://175.126.82.52:8080"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0009"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        realtechESS {
+            minSdkVersion 14
+            applicationId 'com.hms.realtechESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/realtech/login.aspx"'              /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0011"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        nemoESS {
+            minSdkVersion 14
+            applicationId 'com.hms.nemoESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/nemo/login.aspx"'                    /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0013"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+
+        powerlogicsESS {
+            minSdkVersion 14
+            applicationId 'com.hms.powerlogicsESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/powerlogics/login.aspx"'                    /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0014"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        estechESS {
+            minSdkVersion 14
+            applicationId 'com.hms.estechESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://pmsm.haemilsoft.com/app/estech/login.aspx"'                    /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://pmsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0015"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.6'
+        }
+
+        sungrowESS {
+            minSdkVersion 14
+            applicationId 'com.hms.sungrowESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://emsm.haemilsoft.com/pages/login.aspx?cc=0017"'                    /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://emsm.haemilsoft.com"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0017"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.7'
+        }
+
+        edsESS {
+            minSdkVersion 14
+            applicationId 'com.hms.edsESS'
+            buildConfigField 'String', 'URL_ADDR', '"http://emsm.haemilsoft.com/pages/login.aspx?cc=0018"'                    /* 로그인 주소 변수 활용  */
+            buildConfigField 'String', 'DOWN_URL', '"http://emsm.haemilsoft.com/"'                                          /* 다운로드 주소 변수 활용  */
+            buildConfigField 'String', 'COM_CD', '"0018"'                                              /* 회사코드 */
+            targetSdkVersion 25
+            versionCode 2
+            versionName '2.0.7'
+        }
+
+//        haemilESS {
+//            minSdkVersion 14
+//            applicationId 'com.hms.haemilESS'
+//            buildConfigField 'String', 'URL_ADDR', '"http://emsm.haemilsoft.com/pages/login.aspx?cc=0018"'                    /* 로그인 주소 변수 활용  */
+//            buildConfigField 'String', 'DOWN_URL', '"http://emsm.haemilsoft.com/"'                                          /* 다운로드 주소 변수 활용  */
+//            buildConfigField 'String', 'COM_CD', '"0000"'                                              /* 회사코드 */
+//            targetSdkVersion 25
+//            versionCode 2
+//            versionName '2.0.8'
+//        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.firebase:firebase-core:11.8.0'                      // FCM 사용을 위해 추가
+    compile 'com.google.firebase:firebase-messaging:11.8.0'                // FCM 사용을 위해 추가
+//    compile 'com.squareup.okhttp3:okhttp:3.3.0'                              //okHttp
+    testCompile 'junit:junit:4.12'
+}
+
+// FCM 사용을 위해 추가
+apply plugin: 'com.google.gms.google-services'
